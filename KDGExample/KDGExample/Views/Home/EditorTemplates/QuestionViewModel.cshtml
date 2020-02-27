@@ -1,0 +1,6 @@
+@using Microsoft.AspNetCore.Server.Kestrel.Core
+@model KDGExample.Controllers.QuestionViewModel
+
+<form asp-action="Vote" method="post" asp-route-id="@Model.QuestionId" class="d-flex justify-content-between">
+        @Html.EditorFor(m => m.Answers)
+</form>    

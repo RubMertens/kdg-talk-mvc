@@ -1,0 +1,7 @@
+@model KDGExample.Controllers.QuestionViewModel
+
+<h2 class="rounded bg-@Model.Answer.Color p-2 text-center">
+    @Model.Answer.Answer
+</h2>    
+
+<a asp-action="Vote" asp-route-id="@(Model.QuestionId+1)">Next question!</a>

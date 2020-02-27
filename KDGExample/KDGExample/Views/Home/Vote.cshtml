@@ -1,0 +1,17 @@
+@using KDGExample.DAL.Models
+@model KDGExample.Controllers.QuestionViewModel
+
+
+<h1>@Model.Question</h1>
+
+@if (Model.IsAnswered)
+{
+  @Html.DisplayForModel()
+}
+else
+{
+  @Html.EditorForModel()
+}
+
+
+
