@@ -15,7 +15,7 @@ namespace KDGExample.Controllers
     public class HomeController : Controller
     {
         private readonly VotingContext _context;
-        
+
         public HomeController(VotingContext context)
         {
             _context = context;
@@ -32,7 +32,7 @@ namespace KDGExample.Controllers
         public async Task<IActionResult> Vote([FromRoute] int id)
         {
             var question = await _context.Questions
-                .Include(q => q.PossibleAnswers)    
+                .Include(q => q.PossibleAnswers)
                 .FirstOrDefaultAsync(q => q.Id == id);
             if (question == null)
                 return RedirectToAction("Index");
@@ -43,7 +43,7 @@ namespace KDGExample.Controllers
             {
                 Question = question.QuestionContent,
                 QuestionId = question.Id,
-                Answers =  question.PossibleAnswers.Select(ToViewModel).ToList(),
+                Answers = question.PossibleAnswers.Select(ToViewModel).ToList(),
                 Answer = ToViewModel(answer?.PossibleAnswer)
             };
 
@@ -71,14 +71,18 @@ namespace KDGExample.Controllers
             var selectedAnswer = question.PossibleAnswers.FirstOrDefault(pa => pa.Id == answerId);
             if (selectedAnswer == null)
                 return NotFound();
-            
+
             var answer = new Answer()
             {
                 QuestionId = question.Id,
                 PossibleAnswerId = selectedAnswer.Id
             };
-            _context.Answers.Add(answer);
-            await _context.SaveChangesAsync();
+            using (var uow = await _context.StartUnitOfWork())
+            {
+                _context.Answers.Add(answer);
+                await uow.CommitAsync();
+            }
+
             return RedirectToAction("Vote", new {id = question.Id + 1});
         }
 
@@ -93,8 +97,7 @@ namespace KDGExample.Controllers
             };
         }
     }
-    
-    
+
 
     public class QuestionViewModel
     {
