@@ -14,6 +14,12 @@ namespace KDGExample.DAL.Repositories
         {
         }
 
+        public Task<int> CountByQuestionnaire(int questionnaireId)
+        {
+            return VotingContext
+                .Questions
+                .CountAsync(q => q.QuestionnaireId == questionnaireId);
+        }
         public Task<Question> FirstQuestionOfQuestionnaire(int questionnaireId)
         {
             return VotingContext

@@ -7,5 +7,6 @@ namespace KDGExample.DAL.Repositories.Abstraction
     public interface IAnswerRepository: IRepository<Answer>
     {
         Task<Answer> GetByQuestionId(int questionId);
+        Task<int> CountByQuestionnaire(int questionnaireId);
     }
 }

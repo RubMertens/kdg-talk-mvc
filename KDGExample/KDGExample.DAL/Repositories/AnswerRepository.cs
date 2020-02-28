@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using KDGExample.DAL.Context;
 using KDGExample.DAL.Models;
@@ -11,6 +12,14 @@ namespace KDGExample.DAL.Repositories
     {
         public AnswerRepository(DbContext context) : base(context)
         {
+        }
+
+        public Task<int> CountByQuestionnaire(int questionnaireId)
+        {
+            return
+                VotingContext
+                    .Answers
+                     .CountAsync(a => a.QuestionnaireId == questionnaireId);
         }
 
         public Task<Answer> GetByQuestionId(int questionId)

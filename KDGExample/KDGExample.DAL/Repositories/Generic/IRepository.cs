@@ -13,5 +13,6 @@ namespace KDGExample.DAL.Repositories.Generic
         Task<TEntity> Get(int id);
 
         Task<IList<TEntity>> GetAll();
+        
     }
 }

@@ -31,6 +31,7 @@ namespace KDGExample.Controllers
                 {
                     Id = q.Id,
                     Title = q.Title,
+                    PercentCompleted = (int) Math.Round(q.PercentCompleted*100)
                 }).ToList()
             };
             return View(vm);

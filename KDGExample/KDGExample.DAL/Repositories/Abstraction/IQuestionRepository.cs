@@ -9,5 +9,6 @@ namespace KDGExample.DAL.Repositories.Abstraction
         Task<Question> FirstQuestionOfQuestionnaire(int questionnaireId);
         Task<Question> GetWithPossibleAnswers(int id);
         Task<int?> GetNextQuestionId(int previousQuestionId, int questionnaireId);
+        Task<int> CountByQuestionnaire(int questionnaireId);
     }
 }

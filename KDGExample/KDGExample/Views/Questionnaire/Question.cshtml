@@ -1,8 +1,10 @@
 @using KDGExample.DAL.Models
+@using Microsoft.AspNetCore.Razor.Language.Intermediate
 @model QuestionViewModel
 
 
 <h1>@Model.Question</h1>
+@Html.DisplayFor(m => m.Progress);
 
 @if (Model.IsAnswered)
 {

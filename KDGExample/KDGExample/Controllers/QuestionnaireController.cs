@@ -41,6 +41,7 @@ namespace KDGExample.Controllers
             var answer = await unitOfWork.Answers.GetByQuestionId(question.Id);
 
             var nextQuestion = await unitOfWork.Questions.GetNextQuestionId(questionId, questionnaireId);
+            var questionnaire = await unitOfWork.Questionnaires.Get(questionnaireId);
 
             var vm = new QuestionViewModel()
             {
@@ -50,10 +51,18 @@ namespace KDGExample.Controllers
                 Answer = ToViewModel(answer?.PossibleAnswer),
                 HasNextQuestion = nextQuestion.HasValue,
                 NextQuestionId = nextQuestion ?? -1,
-                QuestionnaireId = questionnaireId
+                QuestionnaireId = questionnaireId,
+                Progress = ToViewModel(questionnaire.PercentCompleted)
             };
-
             return View(vm);
+        }
+
+        private ProgressViewModel ToViewModel(decimal percentComplete)
+        {
+            return new ProgressViewModel()
+            {
+                PercentComplete = (int) (percentComplete * 100)
+            };
         }
 
         private AnswerViewModel ToViewModel(PossibleAnswer pa)
@@ -82,11 +91,17 @@ namespace KDGExample.Controllers
             var answer = new Answer()
             {
                 QuestionId = question.Id,
-                PossibleAnswerId = selectedAnswer.Id
+                PossibleAnswerId = selectedAnswer.Id,
+                QuestionnaireId = question.QuestionnaireId
+                
             };
             unitOfWork.Answers.Add(answer);
-            
-            unitOfWork.Commit();
+            var questionnaire= await unitOfWork.Questionnaires.Get(question.QuestionnaireId);
+            var answerCount = await unitOfWork.Answers.CountByQuestionnaire(question.QuestionnaireId) + 1;
+            var questionCount = await unitOfWork.Questions.CountByQuestionnaire(question.QuestionnaireId);
+
+            questionnaire.PercentCompleted = answerCount / (decimal) questionCount;
+            unitOfWork.Commit(); 
             
             var nextQuestionId = await unitOfWork.Questions.GetNextQuestionId(id, question.QuestionnaireId);
             if (nextQuestionId == null)

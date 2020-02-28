@@ -9,7 +9,7 @@
     @foreach (var questionnaire in @Model.Questionnaires)
     {
         <li>
-            <a asp-action="Index" asp-controller="Questionnaire" asp-route-id="@questionnaire.Id">Start @questionnaire.Title</a>
+            <a asp-action="Index" asp-controller="Questionnaire" asp-route-id="@questionnaire.Id">Start @questionnaire.Title</a> ( @(questionnaire.PercentCompleted)% completed)
         </li>
     }
 </ul>

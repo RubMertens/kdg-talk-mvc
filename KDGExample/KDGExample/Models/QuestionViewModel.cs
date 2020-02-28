@@ -11,7 +11,7 @@ namespace KDGExample.Models
         public AnswerViewModel Answer { get; set; }
         public bool HasNextQuestion { get; set; }
         public int NextQuestionId { get; set; }
-        
         public int QuestionnaireId { get; set; }
+        public ProgressViewModel Progress { get; set; }
     }
 }
