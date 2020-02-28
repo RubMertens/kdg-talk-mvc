@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using KDGExample.DAL.Context;
+using KDGExample.DAL.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using IUnitOfWork = KDGExample.DAL.Repositories.IUnitOfWork;
 
 namespace KDGExample
 {
@@ -36,6 +38,10 @@ namespace KDGExample
             services.AddDbContext<VotingContext>((provider, o) => o
                 .UseSqlite(provider.GetService<SqliteConnection>())
             );
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            // services.AddScoped<IQuestionRepository, QuestionRepository>();
+            // services.AddScoped<IAnswerRepository, AnswerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Ruben\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\Ruben\.Rider2019.3\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\Ruben\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Ruben\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_KDGExample.1443744239.00" t="ExcludeRecursive" />
-    <e p="D:\_Projects\kdg-talk-2020\KDGExample" t="IncludeFlat">
+    <e p="C:\kdg-talk-2020\KDGExample" t="IncludeFlat">
       <e p="KDGExample" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
+          <e p="QuestionnaireController.cs" t="Include" />
         </e>
         <e p="KDGExample.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
+          <e p="AnswerViewModel.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
+          <e p="QuestionnairesViewModel.cs" t="Include" />
+          <e p="QuestionViewModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -34,6 +34,9 @@
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
           <e p="Home" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Questionnaire" t="Include">
             <e p="DisplayTemplates" t="Include">
               <e p="QuestionViewModel.cshtml" t="Include" />
             </e>
@@ -42,7 +45,7 @@
               <e p="QuestionViewModel.cshtml" t="Include" />
             </e>
             <e p="Index.cshtml" t="Include" />
-            <e p="Vote.cshtml" t="Include" />
+            <e p="Question.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
             <e p="_Layout.cshtml" t="Include" />
@@ -123,6 +126,7 @@
           <e p="Answer.cs" t="Include" />
           <e p="PossibleAnswer.cs" t="Include" />
           <e p="Question.cs" t="Include" />
+          <e p="Questionnaire.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -131,9 +135,29 @@
             </e>
           </e>
         </e>
+        <e p="Repositories" t="Include">
+          <e p="Abstraction" t="Include">
+            <e p="IAnswerRepository.cs" t="Include" />
+            <e p="IQuestionnaireRepository.cs" t="Include" />
+            <e p="IQuestionRepository.cs" t="Include" />
+          </e>
+          <e p="AnswerRepository.cs" t="Include" />
+          <e p="Generic" t="Include">
+            <e p="IRepository.cs" t="Include" />
+            <e p="Repository.cs" t="Include" />
+          </e>
+          <e p="QuestionnaireRepository.cs" t="Include" />
+          <e p="QuestionRepository.cs" t="Include" />
+        </e>
+        <e p="UnitOfWork" t="Include">
+          <e p="IUnitOfWork.cs" t="Include" />
+          <e p="UnitOfWork.cs" t="Include" />
+        </e>
       </e>
       <e p="KDGExample.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\RubenM\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\RubenM\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_KDGExample.-1812159469.00" t="ExcludeRecursive" />
   </component>
 </project>

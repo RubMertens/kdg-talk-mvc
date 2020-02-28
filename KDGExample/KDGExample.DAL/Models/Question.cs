@@ -7,5 +7,6 @@ namespace KDGExample.DAL.Models
         public int Id { get; set; }
         public string QuestionContent { get; set; }
         public ICollection<PossibleAnswer> PossibleAnswers { get; set; }
+        public int QuestionnaireId { get; set; }
     }
 }

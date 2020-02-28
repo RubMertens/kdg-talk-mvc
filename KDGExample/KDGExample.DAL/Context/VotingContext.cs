@@ -14,30 +14,33 @@ namespace KDGExample.DAL.Context
         public DbSet<Question> Questions { get; set; }
         public DbSet<PossibleAnswer> PossibleAnswers { get; set; }
         public DbSet<Answer> Answers { get; set; }
+        public DbSet<Questionnaire> Questionnaires { get; set; }
 
         public VotingContext(DbContextOptions options) : base(options)
         {
         }
 
-        public async Task<IUnitOfWork> StartUnitOfWork()
-        {
-            var uow = new UnitOfWork(this);
-            await uow.StartTransaction();
-            return uow;
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Questionnaire>().HasData(
+                new Questionnaire()
+                {
+                    Id = 1,
+                    Title = "Helemaal relevante gemeente vragen",
+                }
+            );
             modelBuilder.Entity<Question>().HasData(
                 new Question()
                 {
                     Id = 1,
-                    QuestionContent = "LEZ uitbreiden of niet? "
+                    QuestionContent = "LEZ uitbreiden of niet? ",
+                    QuestionnaireId = 1
                 },
                 new Question()
                 {
                     Id = 2,
-                    QuestionContent = "Een tunnel of een brug? wat zal het worden Antwerpen?"
+                    QuestionContent = "Een tunnel of een brug? wat zal het worden Antwerpen?",
+                    QuestionnaireId = 1
                 }
             );
             modelBuilder.Entity<PossibleAnswer>().HasData(
@@ -70,52 +73,7 @@ namespace KDGExample.DAL.Context
                     QuestionId = 2
                 }
             );
+            
         }
-    }
-
-    public class UnitOfWork : IUnitOfWork
-    {
-        private readonly VotingContext _votingContext;
-        private IDbContextTransaction _contextTransaction;
-        
-        public UnitOfWork(VotingContext votingContext)
-        {
-            _votingContext = votingContext;
-        }
-
-        public async Task StartTransaction()
-        {
-            _contextTransaction = await _votingContext.Database.BeginTransactionAsync();
-        }
-
-        public void Dispose()
-        {
-            _contextTransaction?.Dispose();
-        }
-
-        public async Task CommitAsync()
-        {
-            await _votingContext.SaveChangesAsync();
-            await _contextTransaction.CommitAsync();
-        }
-
-        public void Commit()
-        {
-            _votingContext.SaveChanges();
-            _contextTransaction?.Commit();
-        }
-
-        public async Task RollBack()
-        {
-            await _contextTransaction.RollbackAsync();
-            await _contextTransaction.DisposeAsync();
-        }
-    }
-
-    public interface IUnitOfWork : IDisposable
-    {
-        Task CommitAsync();
-        void Commit();
-        Task RollBack();
     }
 }

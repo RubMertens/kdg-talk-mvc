@@ -1,0 +1,14 @@
+@model QuestionViewModel
+
+<h2 class="rounded bg-@Model.Answer.Color p-2 text-center">
+    @Model.Answer.Answer
+</h2>    
+
+@if (Model.HasNextQuestion)
+{
+    <a asp-action="Question" asp-route-questionId="@(Model.NextQuestionId)" asp-route-questionnaireId="@Model.QuestionnaireId">Next question!</a>
+}
+else
+{
+    <a asp-action="Index" asp-controller="Home">Back to home</a>
+}
