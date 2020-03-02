@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using VotingApp.DAL;
+using VotingApp.DAL.Repositories;
 
 namespace VotingApp
 {
@@ -30,6 +31,10 @@ namespace VotingApp
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddSingleton(p => new SqliteConnection("Data Source=InMemory;"));
             services.AddDbContext<VotingContext>((p,o) => o.UseSqlite(p.GetService<SqliteConnection>()));
+
+            services.AddScoped<IQuestionRepository, QuestionRepository>();
+            services.AddScoped<IAnswerRepository, AnswerRepository>();
+            services.AddScoped<IQuestionnaireRepository, QuestionnaireRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

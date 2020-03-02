@@ -7,23 +7,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using VotingApp.DAL;
+using VotingApp.DAL.Repositories;
 
 namespace VotingApp.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly VotingContext _context;
+        private readonly IQuestionnaireRepository questionnaireRepository;
 
-        public HomeController(ILogger<HomeController> logger, VotingContext context)
+        public HomeController(ILogger<HomeController> logger, IQuestionnaireRepository questionnaireRepository)
         {
             _logger = logger;
-            _context = context;
+            this.questionnaireRepository = questionnaireRepository;
         }
 
         public async Task<IActionResult> Index()
         {
-            await _context.Questionnaires.FirstAsync();
+            await questionnaireRepository.GetAsync(1);
             return View();
         }
     }
