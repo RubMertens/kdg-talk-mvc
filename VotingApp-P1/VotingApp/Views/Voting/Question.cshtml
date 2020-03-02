@@ -1,0 +1,10 @@
+@model VotingApp.Controllers.QuestionViewModel
+
+@if (Model.IsAnswered)
+{
+    @Html.DisplayForModel()
+}
+else
+{
+    @Html.EditorForModel()
+}
