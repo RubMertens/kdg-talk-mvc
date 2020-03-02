@@ -1,5 +1,8 @@
-### Setup DAL
+### The basic setup
 
-- make Voting context
-- register singleton inmemory connection
-- ensure created!
+I've taken the liberty of setting up the basic structure.
+
+- DAL layer with repository & Context (and some seed data).
+    - inMemory sqllite for easy development
+- aspnet core MVC application
+    - RazorRuntimeCompilation active!

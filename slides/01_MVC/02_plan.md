@@ -1,4 +1,4 @@
 ### What are we going to build
 
 - Voting mvc app
-- Questions with possible answers --> reccord your asnwers
+- Questions with possible answers --> record your answers

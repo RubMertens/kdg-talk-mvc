@@ -1,10 +1,8 @@
 ### Agenda
 
-- mvc, next level (40m)
+- mvc, next level
     - display templates
     - editor templates
-    - taghelpers
-    - viewcomponents
-- transactions (20m)
+- transactions 
     - unit of work
     - leveraging DI
