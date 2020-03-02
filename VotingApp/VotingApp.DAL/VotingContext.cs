@@ -20,7 +20,8 @@ namespace VotingApp.DAL
             modelBuilder.Entity<Questionnaire>()
                 .HasData(new Questionnaire()
                 {
-                    Id = 1
+                    Id = 1,
+                    Title = "Totally relevant questions?"
                 });
             modelBuilder.Entity<Question>()
                 .HasData(new Question()

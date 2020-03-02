@@ -189,6 +189,10 @@
     <state x="539" y="15" width="840" height="1034" key="search.everywhere.popup" timestamp="1582909582146">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="406" y="193" width="1107" height="691" key="search.everywhere.popup.inPresentationMode" timestamp="1583167908780">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="406" y="193" width="1107" height="691" key="search.everywhere.popup.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583167908780" />
     <state x="539" y="15" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1582909582146" />
   </component>
 </project>

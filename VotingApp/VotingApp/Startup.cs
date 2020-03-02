@@ -27,7 +27,7 @@ namespace VotingApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddSingleton(p => new SqliteConnection("Data Source=InMemory;"));
             services.AddDbContext<VotingContext>((p,o) => o.UseSqlite(p.GetService<SqliteConnection>()));
         }
