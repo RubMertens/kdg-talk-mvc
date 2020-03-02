@@ -36,6 +36,7 @@
     <setting file="file://$PROJECT_DIR$/VotingApp/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VotingApp/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0F11B901-D96E-46EF-A606-EAF24DCEC0A3/8/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/320AE9F5-4778-4C83-B457-9738AA85B248/8a/be4284f1/IRazorPage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VotingApp/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionnaireRepository.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,14 +56,14 @@
         <option value="$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" />
         <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/IRepository.cs" />
         <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/AbstractRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/AnswerRepository.cs" />
         <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/IQuestionnaireRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionnaireRepository.cs" />
         <option value="$PROJECT_DIR$/VotingApp/Startup.cs" />
         <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/IRepository.cs" />
         <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/GenericRepository.cs" />
         <option value="$PROJECT_DIR$/VotingApp/Controllers/HomeController.cs" />
+        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionRepository.cs" />
+        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionnaireRepository.cs" />
+        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/AnswerRepository.cs" />
       </list>
     </option>
   </component>
