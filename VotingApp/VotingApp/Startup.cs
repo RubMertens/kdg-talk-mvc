@@ -29,7 +29,12 @@ namespace VotingApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-            services.AddSingleton(p => new SqliteConnection("Data Source=InMemory;"));
+            services.AddSingleton(p =>
+            {
+                var conn =  new SqliteConnection("Data Source=:memory:");
+                conn.Open();
+                return conn;
+            });
             services.AddDbContext<VotingContext>((p,o) => o.UseSqlite(p.GetService<SqliteConnection>()));
 
             services.AddScoped<IQuestionRepository, QuestionRepository>();
