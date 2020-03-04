@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b1341ba-d510-45d9-b10f-f644645701e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VotingApp/Controllers/VotingController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VotingApp/Models/QuestionViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VotingApp/Models/QuestionnairesViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VotingApp/Models/ViewModelExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VotingApp/Views/Voting/EditorTemplates/AnswerViewModel.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VotingApp/Views/Voting/EditorTemplates/QuestionViewModel.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VotingApp/Views/Voting/Index.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VotingApp/Views/Voting/Question.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp.DAL/Models/Questionnaire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp.DAL/Models/Questionnaire.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp/InMemory" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp/VotingApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp/VotingApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VotingApp/CustomTagHelpers/DisplayTagHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp/CustomTagHelpers/DisplayTagHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VotingApp/CustomTagHelpers/EditorTagHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp/CustomTagHelpers/EditorTagHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VotingApp/Views/Voting/EditorTemplates/QuestionViewModel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp/Views/Voting/EditorTemplates/QuestionViewModel.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VotingApp/Views/Voting/Question.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp/Views/Voting/Question.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VotingApp/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp/Views/_ViewImports.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,37 +20,47 @@
       <option value="directory" />
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Voting/DisplayTemplates/QuestionViewModel.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Voting/EditorTemplates/QuestionViewModel.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Voting/EditorTemplates/AnswerViewModel.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/PossibleAnswer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Questionnaire.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Answer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Question.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Voting/Question.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6D5BACBD-2C6F-4653-8501-54690F8ED19F/8e/04772985/HtmlHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VotingApp/Views/Voting/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D2E6A0A0-601B-49C7-8EED-5B6223FCE56F/B2/IHtmlHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Voting/Question.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D2E6A0A0-601B-49C7-8EED-5B6223FCE56F/32/HtmlHelperDisplayExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/CustomTagHelpers/DisplayTagHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionnaireRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/B2/IHtmlHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Question.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/PossibleAnswer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/CustomTagHelpers/EditorTagHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/AnswerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Answer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Questionnaire.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VotingApp/Controllers/VotingController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Voting/EditorTemplates/AnswerViewModel.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Voting/EditorTemplates/QuestionViewModel.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Voting/DisplayTemplates/QuestionViewModel.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0F11B901-D96E-46EF-A606-EAF24DCEC0A3/8/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/320AE9F5-4778-4C83-B457-9738AA85B248/8a/be4284f1/IRazorPage.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionnaireRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/AnswerRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/GenericRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/59/HtmlHelperOfT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/34/HtmlHelperEditorExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/GenericRepository.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/VotingApp.DAL/Class1.cs" />
         <option value="$PROJECT_DIR$/VotingApp.DAL/Models/Question.cs" />
-        <option value="$PROJECT_DIR$/VotingApp/Views/_ViewImports.cshtml" />
         <option value="$PROJECT_DIR$/VotingApp/Views/Shared/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/VotingApp.DAL/Models/Questionnaire.cs" />
         <option value="$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" />
@@ -77,12 +76,15 @@
         <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/GenericRepository.cs" />
         <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionRepository.cs" />
         <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/AnswerRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp/Views/Voting/Question.cshtml" />
         <option value="$PROJECT_DIR$/VotingApp/Startup.cs" />
         <option value="$PROJECT_DIR$/VotingApp/Controllers/VotingController.cs" />
         <option value="$PROJECT_DIR$/VotingApp/Views/Voting/DisplayTemplates/QuestionViewModel.cshtml" />
-        <option value="$PROJECT_DIR$/VotingApp/Views/Voting/EditorTemplates/QuestionViewModel.cshtml" />
+        <option value="$PROJECT_DIR$/VotingApp/CustomTagHelpers/DisplayTagHelper.cs" />
+        <option value="$PROJECT_DIR$/VotingApp/Views/_ViewImports.cshtml" />
+        <option value="$PROJECT_DIR$/VotingApp/Views/Voting/Question.cshtml" />
         <option value="$PROJECT_DIR$/VotingApp/Views/Voting/EditorTemplates/AnswerViewModel.cshtml" />
+        <option value="$PROJECT_DIR$/VotingApp/CustomTagHelpers/EditorTagHelper.cs" />
+        <option value="$PROJECT_DIR$/VotingApp/Views/Voting/EditorTemplates/QuestionViewModel.cshtml" />
       </list>
     </option>
   </component>
@@ -96,6 +98,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -166,171 +169,186 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state width="462" height="466" key="DebuggerActiveHint" timestamp="1583341277822">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
     <state width="670" height="848" key="DebuggerActiveHint.inPresentationMode" timestamp="1583171932696">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="670" height="848" key="DebuggerActiveHint.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583171932696" />
-    <state width="1920" height="323" key="GridCell.Tab.0.bottom" timestamp="1583176003975">
+    <state width="462" height="466" key="DebuggerActiveHint/0.0.1920.1050@0.0.1920.1050" timestamp="1583341277822" />
+    <state width="1879" height="214" key="GridCell.Tab.0.bottom" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1583174700322">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700322" />
-    <state width="1920" height="323" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.0.center" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.0.center" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1583174700322">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.0.center.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700322" />
-    <state width="1920" height="323" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.0.left" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.0.left" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1583174700322">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.0.left.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700322" />
-    <state width="1920" height="323" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.0.right" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.0.right" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1583174700322">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.0.right.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700322" />
-    <state width="1920" height="323" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.1.bottom" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.1.bottom" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.1.bottom.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.1.bottom.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.1.center" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.1.center" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.1.center.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.1.center.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.1.left" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.1.left" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.1.left.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.1.left.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.1.right" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.1.right" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.1.right.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.1.right.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.2.bottom" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.2.bottom" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.2.bottom.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.2.bottom.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.2.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.2.center" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.2.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.2.center" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.2.center.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.2.center.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.2.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.2.left" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.2.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.2.left" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.2.left.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.2.left.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.2.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.2.right" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.2.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.2.right" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.2.right.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.2.right.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.2.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.3.bottom" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.2.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.3.bottom" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.3.bottom.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.3.bottom.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.3.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.3.center" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.3.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.3.center" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.3.center.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.3.center.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.3.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.3.left" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.3.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.3.left" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.3.left.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.3.left.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.3.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.3.right" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.3.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.3.right" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.3.right.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.3.right.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.3.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.4.bottom" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.3.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.4.bottom" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.4.bottom.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.4.bottom.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.4.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.4.center" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.4.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.4.center" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.4.center.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.4.center.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.4.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.4.left" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.4.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.4.left" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.4.left.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.4.left.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.4.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
-    <state width="1920" height="323" key="GridCell.Tab.4.right" timestamp="1583176003975">
+    <state width="1879" height="214" key="GridCell.Tab.4.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
+    <state width="1879" height="214" key="GridCell.Tab.4.right" timestamp="1583341837025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.4.right.inPresentationMode" timestamp="1583174700229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1920" height="323" key="GridCell.Tab.4.right.inPresentationMode/0.0.1920.1050@0.0.1920.1050" timestamp="1583174700229" />
-    <state width="1920" height="323" key="GridCell.Tab.4.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583176003975" />
+    <state width="1879" height="214" key="GridCell.Tab.4.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583341837025" />
     <state x="452" y="193" key="Rider.ProjectTemplateDialog.Size" timestamp="1582908635385">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

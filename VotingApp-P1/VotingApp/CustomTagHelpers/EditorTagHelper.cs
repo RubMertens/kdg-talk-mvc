@@ -1,5 +1,7 @@
+using System;
 using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace VotingApp.TagHelpers
@@ -8,18 +10,26 @@ namespace VotingApp.TagHelpers
     public class EditorTagHelper: TagHelper 
     {
         private readonly IHtmlHelper htmlHelper;
-        private readonly HtmlEncoder encoder;
 
-        public EditorTagHelper(IHtmlHelper htmlHelper, HtmlEncoder encoder)
+        public EditorTagHelper(IHtmlHelper htmlHelper)
         {
             this.htmlHelper = htmlHelper;
-            this.encoder = encoder;
         }
-
-
+        
+        [HtmlAttributeName("for")]
+        public ModelExpression Model { get; set; }
+        
+        
+        [ViewContext]
+        [HtmlAttributeNotBound]
+        public ViewContext Context { get; set; }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            output.TagName = "div";
+            ((IViewContextAware) htmlHelper)?.Contextualize(Context);
+            if (Model != null)
+            {
+                output.Content.SetHtmlContent(htmlHelper.EditorForModel(Model.Model));
+            }
         }
     }
 }

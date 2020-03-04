@@ -2,9 +2,11 @@
 
 @if (Model.IsAnswered)
 {
-    @Html.DisplayForModel()
+@*     @Html.DisplayForModel() *@
+    <display for="@Model"></display>
 }
 else
 {
-    @Html.EditorForModel()
+@*     @Html.EditorForModel() *@
+    <editor for="@Model"></editor>
 }
