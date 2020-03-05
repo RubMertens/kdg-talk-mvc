@@ -10,7 +10,7 @@
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
         </e>
-        <e p="InMemory" t="Include" />
+        <e p="Models" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -104,8 +104,8 @@
         <e p="Models" t="Include">
           <e p="Answer.cs" t="Include" />
           <e p="PossibleAnswer.cs" t="Include" />
+          <e p="Progress.cs" t="Include" />
           <e p="Question.cs" t="Include" />
-          <e p="Questionnaire.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -120,7 +120,7 @@
             <e p="IRepository.cs" t="Include" />
           </e>
           <e p="AnswerRepository.cs" t="Include" />
-          <e p="QuestionnaireRepository.cs" t="Include" />
+          <e p="ProgressRepository.cs" t="Include" />
           <e p="QuestionRepository.cs" t="Include" />
         </e>
         <e p="VotingApp.DAL.csproj" t="IncludeRecursive" />

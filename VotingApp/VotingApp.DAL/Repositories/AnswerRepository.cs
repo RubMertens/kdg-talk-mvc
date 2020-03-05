@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using VotingApp.DAL.Models;
 using VotingApp.DAL.Repositories.Abstractions;
@@ -13,5 +14,7 @@ namespace VotingApp.DAL.Repositories
         public AnswerRepository(VotingContext context) : base(context)
         {
         }
+        
+        private VotingContext VotingContext => Context as VotingContext;
     }
 }

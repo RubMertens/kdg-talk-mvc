@@ -8,6 +8,5 @@ namespace VotingApp.DAL.Models
         public string QuestionValue { get; set; }
         public ICollection<PossibleAnswer> PossibleAnswers { get; set; }
         public int QuestionnaireId { get; set; }
-        public Questionnaire Questionnaire { get; set; }
     }
 }

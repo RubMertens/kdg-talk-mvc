@@ -6,6 +6,7 @@ namespace VotingApp.DAL.Repositories.Abstractions
     {
         void Add(T entity);
         void Remove(T entity);
+        void Update(T entity);
         Task<T> GetAsync(int id);
         
     }

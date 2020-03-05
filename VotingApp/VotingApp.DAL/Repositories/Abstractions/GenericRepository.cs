@@ -12,14 +12,22 @@ namespace VotingApp.DAL.Repositories.Abstractions
             Context = context;
         }
 
-        public void Add(T entity)
+        public virtual void Add(T entity)
         {
             Context.Set<T>().Add(entity);
+            Context.SaveChanges();
         }
 
-        public void Remove(T entity)
+        public virtual void Remove(T entity)
         {
             Context.Set<T>().Remove(entity);
+            Context.SaveChanges();
+        }
+
+        public virtual void Update(T entity)
+        {
+            Context.Set<T>().Update(entity);
+            Context.SaveChanges();
         }
 
         public Task<T> GetAsync(int id)

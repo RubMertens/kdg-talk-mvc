@@ -39,7 +39,6 @@ namespace VotingApp
 
             services.AddScoped<IQuestionRepository, QuestionRepository>();
             services.AddScoped<IAnswerRepository, AnswerRepository>();
-            services.AddScoped<IQuestionnaireRepository, QuestionnaireRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

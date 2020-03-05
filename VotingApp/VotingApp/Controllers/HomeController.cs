@@ -13,18 +13,13 @@ namespace VotingApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly IQuestionnaireRepository questionnaireRepository;
 
-        public HomeController(ILogger<HomeController> logger, IQuestionnaireRepository questionnaireRepository)
+        public HomeController()
         {
-            _logger = logger;
-            this.questionnaireRepository = questionnaireRepository;
         }
 
         public async Task<IActionResult> Index()
         {
-            await questionnaireRepository.GetAsync(1);
             return View();
         }
     }

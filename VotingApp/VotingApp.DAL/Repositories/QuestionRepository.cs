@@ -14,5 +14,7 @@ namespace VotingApp.DAL.Repositories
         public QuestionRepository(VotingContext context) : base(context)
         {
         }
+        
+        private VotingContext VotingContext => Context as VotingContext;
     }
 }

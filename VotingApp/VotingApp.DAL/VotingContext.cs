@@ -8,7 +8,7 @@ namespace VotingApp.DAL
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<PossibleAnswer> PossibleAnswers { get; set; }
-        public DbSet<Questionnaire> Questionnaires { get; set; }    
+        public DbSet<Progress> Progresses { get; set; }
         
         public VotingContext(DbContextOptions<VotingContext> options): base(options)
         {
@@ -17,12 +17,7 @@ namespace VotingApp.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Questionnaire>()
-                .HasData(new Questionnaire()
-                {
-                    Id = 1,
-                    Title = "Totally relevant questions?"
-                });
+            modelBuilder.Entity<Progress>().HasData(new Progress());
             modelBuilder.Entity<Question>()
                 .HasData(new Question()
                 {
