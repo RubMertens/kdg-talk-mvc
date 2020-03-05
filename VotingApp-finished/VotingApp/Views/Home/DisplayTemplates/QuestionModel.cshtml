@@ -1,0 +1,7 @@
+@model VotingApp.Controllers.QuestionModel
+
+<h2>@Model.Question</h2>
+
+<h3 class="font-italic">@Model.SelectedAnswer</h3>
+
+<a asp-action="Question" asp-route-id="@(Model.Id +1)">Next question please!</a>

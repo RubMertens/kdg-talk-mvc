@@ -1,0 +1,19 @@
+@model VotingApp.Controllers.QuestionModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+@Html.DisplayFor(m => m.ProgressModel)
+<div class="text-center">
+    @if (Model.IsAnswered)
+    {
+        <display/>
+@*         @Html.DisplayForModel() *@
+    }    
+    else
+    {
+        <editor/>
+@*         @Html.EditorForModel() *@
+    }
+</div>

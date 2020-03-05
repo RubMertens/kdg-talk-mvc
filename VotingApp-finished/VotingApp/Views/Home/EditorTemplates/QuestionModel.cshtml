@@ -1,0 +1,6 @@
+@model VotingApp.Controllers.QuestionModel
+
+<h2>@Model.Question</h2>
+<form asp-action="Vote" asp-route-id="@Model.Id" method="post">
+    @Html.EditorFor(m => m.PossibleAnswers)    
+</form>
