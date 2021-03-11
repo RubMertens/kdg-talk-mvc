@@ -1,0 +1,30 @@
+@model Voting.WebApp.Controllers.QuestionViewModel
+
+@{
+    ViewBag.Title = "Question";
+    Layout = "_Layout";
+}
+
+<h2>@Model.Question</h2>
+<vc:progress questionnaire-id="@Model.QuestionnaireId"/>
+@if (Model.IsAnswered)
+{
+    <div>
+        @foreach (var pa in Model.PossibleAnswers)
+        {
+            <button class="btn @(pa.IsSelectedAnswer ? "btn-primary" : "btn-outline-primary")" disabled>@pa.Answer</button>
+        }
+        
+    </div>
+    <vc:user-stats question-id="@Model.Id"/>
+    <a asp-action="Question" asp-route-id="@(Model.NextQuestionId ?? -1)">Go to next question</a>
+}
+else
+{
+    <form asp-action="Vote" asp-route-questionId="@Model.Id" asp-route-questionnaireId="@Model.QuestionnaireId">
+        @foreach (var pa in Model.PossibleAnswers)
+        {
+            <button class="btn btn-primary" name="answerId" value="@pa.Id">@pa.Answer</button>
+        }
+    </form>
+}

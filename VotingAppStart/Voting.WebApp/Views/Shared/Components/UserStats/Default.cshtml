@@ -1,0 +1,8 @@
+@model Voting.WebApp.ViewComponents.StatsModel
+
+<div class="progress">
+    @foreach (var c in Model.AnsweredCounts)
+    {
+        <div class="progress-bar" style="width: @c.Percent%; background-color: @c.BackgroundColor">@c.Answer</div>
+    }
+</div>

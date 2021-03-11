@@ -2,18 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b1341ba-d510-45d9-b10f-f644645701e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/VotingApp.DAL/Models/Progress.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VotingApp.DAL/Repositories/ProgressRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp.DAL/Models/Question.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp.DAL/Models/Question.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp.DAL/Models/Questionnaire.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/GenericRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp.DAL/Repositories/AnswerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp.DAL/Repositories/AnswerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionnaireRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VotingApp/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VotingApp/Startup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VotingAppStart/.idea/.idea.VotingAppStart/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VotingAppStart/.idea/.idea.VotingAppStart/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VotingAppStart/.idea/.idea.VotingAppStart/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VotingAppStart/.idea/.idea.VotingAppStart/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VotingAppStart/Voting.Data/Models/Answer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VotingAppStart/Voting.Data/Models/PossibleAnswer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VotingAppStart/Voting.Data/Models/Question.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VotingAppStart/Voting.Data/Models/Questionnaire.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VotingAppStart/Voting.WebApp/Models/QuestionnairesViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VotingAppStart/Voting.WebApp/Views/Home/Question.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VotingAppStart/Voting.WebApp/Voting.WebApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VotingApp/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,50 +27,26 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/PossibleAnswer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Answer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Question.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0F11B901-D96E-46EF-A606-EAF24DCEC0A3/8/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/320AE9F5-4778-4C83-B457-9738AA85B248/8a/be4284f1/IRazorPage.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/ProgressRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/34/HtmlHelperEditorExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/AnswerRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D2E6A0A0-601B-49C7-8EED-5B6223FCE56F/C/Controller.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Progress.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/GenericRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/AnswerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/320AE9F5-4778-4C83-B457-9738AA85B248/8a/be4284f1/IRazorPage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/ProgressRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionRepository.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Class1.cs" />
-        <option value="$PROJECT_DIR$/VotingApp/Views/_ViewImports.cshtml" />
-        <option value="$PROJECT_DIR$/VotingApp/Views/Shared/_Layout.cshtml" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Models/Questionnaire.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/IRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/AbstractRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/IQuestionnaireRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionnaireRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Models/Progress.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Models/Question.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/VotingContext.cs" />
-        <option value="$PROJECT_DIR$/VotingApp/Startup.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/IRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/Abstractions/GenericRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/ProgressRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/AnswerRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp.DAL/Repositories/QuestionRepository.cs" />
-        <option value="$PROJECT_DIR$/VotingApp/Controllers/HomeController.cs" />
-      </list>
-    </option>
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D2E6A0A0-601B-49C7-8EED-5B6223FCE56F/C/Controller.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Progress.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Answer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/PossibleAnswer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0F11B901-D96E-46EF-A606-EAF24DCEC0A3/8/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp.DAL/Models/Question.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/34/HtmlHelperEditorExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VotingApp/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1YRbx7UHc0knN54uPBiOsvA60Of" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -75,16 +54,17 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.VotingApp">
     <configuration name="VotingApp" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -99,7 +79,7 @@
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
       <method v="2">
-        <option name="Build" enabled="true" />
+        <option name="Build" />
       </method>
     </configuration>
     <configuration name="VotingApp: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -114,7 +94,7 @@
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
       <method v="2">
-        <option name="Build" enabled="true" />
+        <option name="Build" />
       </method>
     </configuration>
   </component>
@@ -130,6 +110,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -141,11 +122,12 @@
       <option name="presentableId" value="Default" />
       <updated>1582908598746</updated>
       <workItem from="1582908602338" duration="942000" />
+      <workItem from="1615476080888" duration="1821000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
@@ -159,6 +141,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1869" height="346" key="GridCell.Tab.0.bottom" timestamp="1582909625666">
