@@ -19,8 +19,4 @@
       <ProjectReference Include="..\Voting.Data\Voting.Data.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Pages\Components" />
-    </ItemGroup>
-
 </Project>

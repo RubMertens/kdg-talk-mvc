@@ -1,0 +1,8 @@
+@model Voting.WebApp.Controllers.QuestionViewModel
+
+<div>
+    @foreach (var pa in Model.PossibleAnswers)
+    {
+        <button class="btn @(pa.IsSelectedAnswer ? "btn-primary" : "btn-outline-primary")" disabled>@pa.Answer</button>
+    }
+</div>
