@@ -11,7 +11,7 @@ namespace Voting.Data.Data
         public DbSet<Questionnaire> Questionnaires { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<PossibleAnswer> PossibleAnswers { get; set; }
-        
+        public DbSet<Comment> Comments { get; set; }
         
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -20,6 +20,10 @@ namespace Voting.Data.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Answer>()
+                .HasIndex(a => new {a.QuestionId, a.UserId})
+                .IsUnique();
+
             builder.Entity<Questionnaire>()
                 .HasData(new Questionnaire()
                     {

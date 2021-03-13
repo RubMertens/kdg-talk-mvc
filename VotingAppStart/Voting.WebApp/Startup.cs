@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Voting.Data.Data;
+using Voting.Data.Repositories;
 
 namespace Voting.WebApp
 {
@@ -22,7 +23,10 @@ namespace Voting.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            {
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
+                options.EnableSensitiveDataLogging();
+            });
                 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -30,6 +34,11 @@ namespace Voting.WebApp
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();
+
+            services.AddScoped<AnswerRepository>();
+            services.AddScoped<CommentRepository>();
+            services.AddScoped<QuestionnaireRepository>();
+            services.AddScoped<QuestionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

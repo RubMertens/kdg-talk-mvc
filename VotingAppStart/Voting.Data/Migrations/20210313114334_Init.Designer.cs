@@ -9,8 +9,8 @@ using Voting.Data.Data;
 namespace Voting.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210311175759_init")]
-    partial class init
+    [Migration("20210313114334_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -129,23 +129,6 @@ namespace Voting.Data.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "c6dbdd19-5081-42a4-9643-7b311e73db85",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "92702261-9a1a-436e-aa68-938aac3dc7dc",
-                            Email = "test@test.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "TEST@TEST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENG3rLQKXq8hUoDtgCX4p5jeI7LAXbfUD1saNvKhbb8v5N2G1CDGe1rMYguteYmBFA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "1e357656-84e7-43ce-91b4-3a2dfc528a4b",
-                            TwoFactorEnabled = false,
-                            UserName = "test@test.com"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -237,6 +220,9 @@ namespace Voting.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("CommentId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("PossibleAnswerId")
                         .HasColumnType("INTEGER");
 
@@ -251,15 +237,35 @@ namespace Voting.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PossibleAnswerId");
+                    b.HasIndex("CommentId");
 
-                    b.HasIndex("QuestionId");
+                    b.HasIndex("PossibleAnswerId");
 
                     b.HasIndex("QuestionnaireId");
 
                     b.HasIndex("UserId");
 
+                    b.HasIndex("QuestionId", "UserId")
+                        .IsUnique();
+
                     b.ToTable("Answers");
+                });
+
+            modelBuilder.Entity("Voting.Data.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CommentValue")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("Voting.Data.Models.PossibleAnswer", b =>
@@ -322,7 +328,7 @@ namespace Voting.Data.Migrations
                         {
                             Id = 6,
                             Answer = "Yellow",
-                            QuestionId = 4
+                            QuestionId = 3
                         },
                         new
                         {
@@ -462,6 +468,10 @@ namespace Voting.Data.Migrations
 
             modelBuilder.Entity("Voting.Data.Models.Answer", b =>
                 {
+                    b.HasOne("Voting.Data.Models.Comment", "Comment")
+                        .WithMany()
+                        .HasForeignKey("CommentId");
+
                     b.HasOne("Voting.Data.Models.PossibleAnswer", "PossibleAnswer")
                         .WithMany()
                         .HasForeignKey("PossibleAnswerId")
@@ -483,6 +493,8 @@ namespace Voting.Data.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+
+                    b.Navigation("Comment");
 
                     b.Navigation("PossibleAnswer");
 

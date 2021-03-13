@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Voting.Data.Migrations
 {
-    public partial class init : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,6 +44,20 @@ namespace Voting.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Comments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserId = table.Column<string>(type: "TEXT", nullable: true),
+                    CommentValue = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comments", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -215,7 +229,8 @@ namespace Voting.Data.Migrations
                     QuestionId = table.Column<int>(type: "INTEGER", nullable: false),
                     PossibleAnswerId = table.Column<int>(type: "INTEGER", nullable: false),
                     UserId = table.Column<string>(type: "TEXT", nullable: true),
-                    QuestionnaireId = table.Column<int>(type: "INTEGER", nullable: false)
+                    QuestionnaireId = table.Column<int>(type: "INTEGER", nullable: false),
+                    CommentId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -224,6 +239,12 @@ namespace Voting.Data.Migrations
                         name: "FK_Answers_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Answers_Comments_CommentId",
+                        column: x => x.CommentId,
+                        principalTable: "Comments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -245,11 +266,6 @@ namespace Voting.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.InsertData(
-                table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c6dbdd19-5081-42a4-9643-7b311e73db85", 0, "92702261-9a1a-436e-aa68-938aac3dc7dc", "test@test.com", true, false, null, "TEST@TEST.COM", null, "AQAAAAEAACcQAAAAENG3rLQKXq8hUoDtgCX4p5jeI7LAXbfUD1saNvKhbb8v5N2G1CDGe1rMYguteYmBFA==", null, false, "1e357656-84e7-43ce-91b4-3a2dfc528a4b", false, "test@test.com" });
 
             migrationBuilder.InsertData(
                 table: "Questionnaires",
@@ -309,7 +325,7 @@ namespace Voting.Data.Migrations
             migrationBuilder.InsertData(
                 table: "PossibleAnswers",
                 columns: new[] { "Id", "Answer", "Color", "QuestionId" },
-                values: new object[] { 6, "Yellow", null, 4 });
+                values: new object[] { 6, "Yellow", null, 3 });
 
             migrationBuilder.InsertData(
                 table: "PossibleAnswers",
@@ -322,14 +338,20 @@ namespace Voting.Data.Migrations
                 values: new object[] { 8, "A holy grail?", null, 4 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Answers_CommentId",
+                table: "Answers",
+                column: "CommentId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Answers_PossibleAnswerId",
                 table: "Answers",
                 column: "PossibleAnswerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Answers_QuestionId",
+                name: "IX_Answers_QuestionId_UserId",
                 table: "Answers",
-                column: "QuestionId");
+                columns: new[] { "QuestionId", "UserId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Answers_QuestionnaireId",
@@ -408,6 +430,9 @@ namespace Voting.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Comments");
 
             migrationBuilder.DropTable(
                 name: "PossibleAnswers");

@@ -15,5 +15,8 @@ namespace Voting.Data.Models
         
         public int QuestionnaireId { get; set; }
         public Questionnaire Questionnaire { get; set; }
+        
+        public int? CommentId { get; set; }
+        public Comment Comment { get; set; }
     }
 }
