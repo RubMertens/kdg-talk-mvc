@@ -19,11 +19,4 @@
       <ProjectReference Include="..\Voting.Data\Voting.Data.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Views\Home\DisplayTemplates\QuestionViewModel.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Home\EditorTemplates\PossibleAnswerViewModel.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Home\EditorTemplates\QuestionViewModel.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Shared\Components\Progress\Default.cshtml" />
-    </ItemGroup>
-
 </Project>

@@ -1,5 +1,4 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@model QuestionnairesViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -7,17 +6,7 @@
 <div class="text-center">
     @if (User.Identity.IsAuthenticated)
     {
-        <ul class="list-group">
-            @foreach (var q in Model.Questionnaires)
-            {
-                <li class="list-group-item">
-                    <a asp-action="Question" asp-route-id="@q.FirstQuestionId">
-                        @q.Title
-                    </a>
-                    <vc:progress questionnaire-id="@q.Id"/>
-                </li>
-            }
-        </ul>
+        <div>Your stuff goes here!</div>
     }
     else
     {
