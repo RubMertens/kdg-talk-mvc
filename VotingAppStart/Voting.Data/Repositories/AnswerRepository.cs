@@ -6,7 +6,13 @@ using Voting.Data.Models;
 
 namespace Voting.Data.Repositories
 {
-    public class AnswerRepository
+    public interface IAnswerRepository
+    {
+        Task<Answer> ByQuestionAndUserId(int questionId, string userId);
+        Task<Answer> Add(Answer answer);
+    }
+
+    public class AnswerRepository : IAnswerRepository
     {
         private readonly ApplicationDbContext context;
 

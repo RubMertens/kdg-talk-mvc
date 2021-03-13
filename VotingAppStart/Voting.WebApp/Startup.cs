@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Voting.Data;
 using Voting.Data.Data;
 using Voting.Data.Repositories;
 
@@ -35,10 +36,11 @@ namespace Voting.WebApp
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();
 
-            services.AddScoped<AnswerRepository>();
-            services.AddScoped<CommentRepository>();
-            services.AddScoped<QuestionnaireRepository>();
-            services.AddScoped<QuestionRepository>();
+            services.AddScoped<IAnswerRepository, AnswerRepository>();
+            services.AddScoped<ICommentRepository, CommentRepository>();
+            services.AddScoped<IQuestionnaireRepository, QuestionnaireRepository>();
+            services.AddScoped<IQuestionRepository, QuestionRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

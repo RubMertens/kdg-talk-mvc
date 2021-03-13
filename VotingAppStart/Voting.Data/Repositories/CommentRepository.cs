@@ -6,7 +6,13 @@ using Voting.Data.Models;
 
 namespace Voting.Data.Repositories
 {
-    public class CommentRepository
+    public interface ICommentRepository
+    {
+        Task<Comment> AddAsync(Comment comment);
+        Task<ICollection<Comment>> All();
+    }
+
+    public class CommentRepository : ICommentRepository
     {
         private readonly ApplicationDbContext context;
 

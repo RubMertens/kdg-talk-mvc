@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Voting.Data;
 using Voting.Data.Data;
 using Voting.Data.Models;
 using Voting.Data.Repositories;
@@ -18,17 +19,19 @@ namespace Voting.WebApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<IdentityUser> userManager;
-        private readonly AnswerRepository answerRepository;
-        private readonly QuestionnaireRepository questionnaireRepository;
-        private readonly QuestionRepository questionRepository;
-        private readonly CommentRepository commentRepository;
+        private readonly IAnswerRepository answerRepository;
+        private readonly IQuestionnaireRepository questionnaireRepository;
+        private readonly IQuestionRepository questionRepository;
+        private readonly ICommentRepository commentRepository;
+        private readonly IUnitOfWork unitOfWork;
 
         public HomeController(ILogger<HomeController> logger,
             UserManager<IdentityUser> userManager,
-            AnswerRepository answerRepository,
-            QuestionnaireRepository questionnaireRepository,
-            QuestionRepository questionRepository,
-            CommentRepository commentRepository
+            IAnswerRepository answerRepository,
+            IQuestionnaireRepository questionnaireRepository,
+            IQuestionRepository questionRepository,
+            ICommentRepository commentRepository,
+            IUnitOfWork unitOfWork
         )
         {
             _logger = logger;
@@ -37,6 +40,7 @@ namespace Voting.WebApp.Controllers
             this.questionnaireRepository = questionnaireRepository;
             this.questionRepository = questionRepository;
             this.commentRepository = commentRepository;
+            this.unitOfWork = unitOfWork;
         }
 
         public async Task<IActionResult> Index()
@@ -129,6 +133,7 @@ namespace Voting.WebApp.Controllers
                 CommentId = c?.Id
             };
             await answerRepository.Add(answer);
+            await unitOfWork.CommitAsync();  
 
             // var nextQuestionId = await NextQuestionId(questionnaireId, questionId);
             var nextQuestionId = await questionnaireRepository.NextQuestionId(questionnaireId, questionId);

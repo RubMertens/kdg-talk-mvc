@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Voting.Data.Models;
@@ -12,7 +14,17 @@ namespace Voting.Data.Data
         public DbSet<Answer> Answers { get; set; }
         public DbSet<PossibleAnswer> PossibleAnswers { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        
+
+        public async Task ActualSaveChangesAsync()
+        {
+            await base.SaveChangesAsync();
+        }
+
+        public void ActualSaveChanges()
+        {
+            base.SaveChanges();
+        }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

@@ -5,7 +5,12 @@ using Voting.Data.Models;
 
 namespace Voting.Data.Repositories
 {
-    public class QuestionRepository
+    public interface IQuestionRepository
+    {
+        Task<Question> ById(int id);
+    }
+
+    public class QuestionRepository : IQuestionRepository
     {
         private readonly ApplicationDbContext context;
 

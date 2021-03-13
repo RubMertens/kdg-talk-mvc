@@ -8,7 +8,13 @@ using Voting.Data.Models;
 
 namespace Voting.Data.Repositories
 {
-    public class QuestionnaireRepository
+    public interface IQuestionnaireRepository
+    {
+        Task<ICollection< Questionnaire>> All();
+        Task<int?> NextQuestionId(int questionnaireId, int currentQuestionId);
+    }
+
+    public class QuestionnaireRepository : IQuestionnaireRepository
     {
         private readonly ApplicationDbContext context;
 
