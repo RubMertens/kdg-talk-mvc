@@ -165,7 +165,7 @@ namespace Voting.WebApp.Controllers
             return View(vm);
         }
     }
-
+    
     public class CommentViewModel
     {
         public string By { get; set; }
