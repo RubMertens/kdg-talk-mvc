@@ -229,7 +229,6 @@ namespace Voting.Data.Migrations
                     QuestionId = table.Column<int>(type: "INTEGER", nullable: false),
                     PossibleAnswerId = table.Column<int>(type: "INTEGER", nullable: false),
                     UserId = table.Column<string>(type: "TEXT", nullable: true),
-                    QuestionnaireId = table.Column<int>(type: "INTEGER", nullable: false),
                     CommentId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
@@ -251,12 +250,6 @@ namespace Voting.Data.Migrations
                         name: "FK_Answers_PossibleAnswers_PossibleAnswerId",
                         column: x => x.PossibleAnswerId,
                         principalTable: "PossibleAnswers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Answers_Questionnaires_QuestionnaireId",
-                        column: x => x.QuestionnaireId,
-                        principalTable: "Questionnaires",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -352,11 +345,6 @@ namespace Voting.Data.Migrations
                 table: "Answers",
                 columns: new[] { "QuestionId", "UserId" },
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Answers_QuestionnaireId",
-                table: "Answers",
-                column: "QuestionnaireId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Answers_UserId",

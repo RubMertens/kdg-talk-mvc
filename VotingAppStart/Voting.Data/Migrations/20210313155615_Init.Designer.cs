@@ -9,7 +9,7 @@ using Voting.Data.Data;
 namespace Voting.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210313125210_Init")]
+    [Migration("20210313155615_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -229,9 +229,6 @@ namespace Voting.Data.Migrations
                     b.Property<int>("QuestionId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("QuestionnaireId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("UserId")
                         .HasColumnType("TEXT");
 
@@ -240,8 +237,6 @@ namespace Voting.Data.Migrations
                     b.HasIndex("CommentId");
 
                     b.HasIndex("PossibleAnswerId");
-
-                    b.HasIndex("QuestionnaireId");
 
                     b.HasIndex("UserId");
 
@@ -484,12 +479,6 @@ namespace Voting.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Voting.Data.Models.Questionnaire", "Questionnaire")
-                        .WithMany("Answers")
-                        .HasForeignKey("QuestionnaireId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
@@ -499,8 +488,6 @@ namespace Voting.Data.Migrations
                     b.Navigation("PossibleAnswer");
 
                     b.Navigation("Question");
-
-                    b.Navigation("Questionnaire");
 
                     b.Navigation("User");
                 });
@@ -534,8 +521,6 @@ namespace Voting.Data.Migrations
 
             modelBuilder.Entity("Voting.Data.Models.Questionnaire", b =>
                 {
-                    b.Navigation("Answers");
-
                     b.Navigation("Questions");
                 });
 #pragma warning restore 612, 618
