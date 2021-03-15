@@ -1,1 +1,3 @@
-<!--.slide: data-background="./img/Vakantiejob2020.jpg" data-background-size="contain"-->
+<!--.slide: class="is-empty"-->
+<!--.slide: data-background="./img/Vakantiejob2021-1.jpg" data-background-size="contain"-->
+
