@@ -13,6 +13,7 @@ namespace Voting.Data.Repositories
     {
         Task<ICollection< Questionnaire>> All();
         Task<int?> NextQuestionId(int currentQuestionId);
+        Task<Questionnaire> ById(int id);
     }
 
     public class QuestionnaireRepository : IQuestionnaireRepository
@@ -22,6 +23,11 @@ namespace Voting.Data.Repositories
         public QuestionnaireRepository(ApplicationDbContext context)
         {
             this.context = context;
+        }
+            
+        public async Task<Questionnaire> ById(int id)
+        {
+            return await context.Questionnaires.Include(q => q.Questions).FirstOrDefaultAsync(q => q.Id == id);
         }
 
         public async Task<ICollection< Questionnaire>> All()
