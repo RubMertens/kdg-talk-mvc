@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Voting.Data.Data;
@@ -11,7 +12,7 @@ namespace Voting.Data.Repositories
     public interface IQuestionnaireRepository
     {
         Task<ICollection< Questionnaire>> All();
-        Task<int?> NextQuestionId(int questionnaireId, int currentQuestionId);
+        Task<int?> NextQuestionId(int currentQuestionId);
     }
 
     public class QuestionnaireRepository : IQuestionnaireRepository
@@ -30,10 +31,15 @@ namespace Voting.Data.Repositories
                 .ToListAsync();
         }
 
-        public async Task<int?> NextQuestionId(int questionnaireId, int currentQuestionId)
+        public async Task<int?> NextQuestionId(int currentQuestionId)
         {
-            return (await context.Questions
-                .FirstOrDefaultAsync(q => q.QuestionnaireId == questionnaireId && q.Id > currentQuestionId))?.Id;
+
+            var question =await context.Questions.FindAsync(currentQuestionId);
+            return (await context.Questions.FirstOrDefaultAsync(q =>
+                q.QuestionnaireId == question.QuestionnaireId && q.Id > question.Id))
+                ?.Id;
+            // return (await context.Questions
+            //     .FirstOrDefaultAsync(q => q.QuestionnaireId == questionnaireId && q.Id > currentQuestionId))?.Id;
         }
         
     }
