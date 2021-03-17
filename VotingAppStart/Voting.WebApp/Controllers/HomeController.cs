@@ -71,23 +71,4 @@ namespace Voting.WebApp.Controllers
         public string By { get; set; }
         public string Comment { get; set; }
     }
-
-    public class QuestionViewModel
-    {
-        public int Id { get; set; }
-        public int QuestionnaireId { get; set; }
-        public int? NextQuestionId { get; set; }
-        public string Question { get; set; }
-        public List<PossibleAnswerViewModel> PossibleAnswers { get; set; }
-        public bool  IsAnswered { get; set; }
-        public string Comment { get; set; }
-    }
-
-    public class PossibleAnswerViewModel
-    {
-        public int Id { get; set; }
-        public string Answer { get; set; }
-
-        public bool IsSelectedAnswer { get; set; }
-    }
 }
