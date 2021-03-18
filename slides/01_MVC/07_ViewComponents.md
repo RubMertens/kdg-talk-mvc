@@ -14,9 +14,8 @@
 <!--.element: class="fragment" data-fragment-index="2" -->
 
 - Inherits from `ViewComponent` and/or name ends with `ViewComponent`
-- Method `Process` or `ProcessAsync` by convention
+- Method `Invoke` or `InvokeAsync` by convention
 - Returns `IViewComponentResult`
-  - `ViewViewComponentResult` <-- not a typo!
 
 <!--.element: class="fragment" data-fragment-index="2" -->
 
