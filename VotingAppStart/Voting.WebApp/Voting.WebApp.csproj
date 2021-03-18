@@ -26,4 +26,8 @@
       <_ContentIncludedByDefault Remove="Views\Shared\Components\Progress\Default.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Views\Home\DisplayTemplates\QuestionViewModel.cshtml" />
+    </ItemGroup>
+
 </Project>
