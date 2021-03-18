@@ -9,7 +9,7 @@ using Voting.Data.Data;
 namespace Voting.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210318174449_Init")]
+    [Migration("20210318183922_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -474,7 +474,7 @@ namespace Voting.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("Voting.Data.Models.Question", "Question")
-                        .WithMany()
+                        .WithMany("Answers")
                         .HasForeignKey("QuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -516,6 +516,8 @@ namespace Voting.Data.Migrations
 
             modelBuilder.Entity("Voting.Data.Models.Question", b =>
                 {
+                    b.Navigation("Answers");
+
                     b.Navigation("PossibleAnswers");
                 });
 

@@ -472,7 +472,7 @@ namespace Voting.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("Voting.Data.Models.Question", "Question")
-                        .WithMany()
+                        .WithMany("Answers")
                         .HasForeignKey("QuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -514,6 +514,8 @@ namespace Voting.Data.Migrations
 
             modelBuilder.Entity("Voting.Data.Models.Question", b =>
                 {
+                    b.Navigation("Answers");
+
                     b.Navigation("PossibleAnswers");
                 });
 

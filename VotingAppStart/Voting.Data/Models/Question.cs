@@ -9,5 +9,7 @@ namespace Voting.Data.Models
         public ICollection<PossibleAnswer> PossibleAnswers { get; set; }
         public int QuestionnaireId { get; set; }
         public Questionnaire Questionnaire { get; set; }
+        
+        public ICollection<Answer> Answers { get; set; }
     }
 }
