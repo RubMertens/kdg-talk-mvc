@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Identity
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div>Your stuff goes here!</div>
+    }
+    else
+    {
+        <p>Please log in :( </p>
+    }
+
+</div>

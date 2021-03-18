@@ -1,3 +1,5 @@
-<!--.slide: data-background="./img/Repetition.jpg"-->
-<!--.slide: style="color:black; font-size:3em"-->
-MVC, Let's not repeat ourselves.
+<!--.slide: class="is-empty" -->
+<!--.slide: data-background="./img/Repetition.png"-->
+<!--.slide: style="color:#2a76dd;"-->
+
+## MVC, Let's not repeat ourselves.

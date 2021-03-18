@@ -1,1 +1,0 @@
-<!--.slide: data-background="./img/Repository.png" data-background-size="contain"-->

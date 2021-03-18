@@ -1,0 +1,20 @@
+@model Voting.WebApp.Controllers.QuestionViewModel
+
+@{
+    ViewBag.Title = "Question";
+    Layout = "_Layout";
+}
+
+<h2>@Model.Question</h2>
+<vc:progress questionnaire-id="@Model.QuestionnaireId"/>
+@if (Model.IsAnswered)
+{
+    @* @Html.DisplayForModel() *@
+    <display/>
+    <a asp-action="Question" asp-route-id="@(Model.NextQuestionId ?? -1)">Go to next question</a>
+}
+else
+{
+    @*@Html.EditorForModel()*@
+    <editor/>
+}
