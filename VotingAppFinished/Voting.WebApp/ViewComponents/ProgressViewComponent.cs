@@ -7,7 +7,7 @@ using Voting.Data.Data;
 
 namespace Voting.WebApp.ViewComponents
 {
-    public class ProgressViewComponent: ViewComponent
+    public class ProgressViewComponent : ViewComponent
     {
         private readonly ApplicationDbContext context;
         private readonly UserManager<IdentityUser> userManager;
@@ -20,23 +20,30 @@ namespace Voting.WebApp.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync(int questionnaireId)
         {
-            var userId = userManager.GetUserId(UserClaimsPrincipal);
+            /*        
+            var totalQuestions = await _dbContext.Questions.CountAsync(q => q.QuestionnaireId == questionnaireId);
+            var totalAnswers = await _dbContext.Questions.CountAsync(q => q.QuestionnaireId == questionnaireId && q.Answers.Any());
+            var percent = (int)(totalAnswers / (decimal)totalQuestions*100);
+            return View(new ProgressViewModel(percent)); 
+            */
 
-            var answers = await context.Answers
+            string userId = userManager.GetUserId(UserClaimsPrincipal);
+
+            int answers = await context.Answers
                 .Where(a => a.QuestionnaireId == questionnaireId
                             && a.UserId == userId
                 ).CountAsync();
 
-            var totalQuestions = await context.Questions
+            int totalQuestions = await context.Questions
                 .Where(q => q.QuestionnaireId == questionnaireId)
                 .CountAsync();
 
-            var vm = new ProgressViewModel
+            ProgressViewModel vm = new ProgressViewModel
             {
                 Id = questionnaireId,
-                PercentComplete = (int) ((decimal) answers / totalQuestions *100)
+                PercentComplete = (int)((decimal)answers / totalQuestions * 100)
             };
-            
+
             return View(vm);
         }
     }
