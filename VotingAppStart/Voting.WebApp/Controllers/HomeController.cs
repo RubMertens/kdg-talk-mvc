@@ -18,17 +18,26 @@ namespace Voting.WebApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly ICommentRepository commentRepository;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly ICommentRepository _commentRepository;
+        private readonly IQuestionnaireRepository _questionnaireRepository;
+        private readonly IQuestionRepository _questionRepository;
+        private readonly IAnswerRepository _answerRepository;
 
         public HomeController(ILogger<HomeController> logger,
             UserManager<IdentityUser> userManager,
-            ICommentRepository commentRepository
+            ICommentRepository commentRepository,
+            IQuestionnaireRepository questionnaireRepository,
+            IQuestionRepository questionRepository,
+            IAnswerRepository answerRepository
         )
         {
             _logger = logger;
-            this.userManager = userManager;
-            this.commentRepository = commentRepository;
+            this._userManager = userManager;
+            this._commentRepository = commentRepository;
+            _questionnaireRepository = questionnaireRepository;
+            _questionRepository = questionRepository;
+            _answerRepository = answerRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -50,12 +59,12 @@ namespace Voting.WebApp.Controllers
         [HttpGet]
         public async Task<IActionResult> AllComments()
         {
-            var comments = await commentRepository.All();
+            var comments = await _commentRepository.All();
             var vm = new List<CommentViewModel>();
 
             foreach (var comment in comments)
             {
-                var user = await userManager.FindByIdAsync(comment.UserId);
+                var user = await _userManager.FindByIdAsync(comment.UserId);
                 vm.Add(new CommentViewModel()
                 {
                     By = user.UserName,
