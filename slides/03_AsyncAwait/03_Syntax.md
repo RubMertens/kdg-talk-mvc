@@ -1,6 +1,6 @@
-### What magic words do I need to put in?
+#### What magic words do I need to put in?
 
-#### Instead of this
+##### Instead of this
 
 <!--.element: class="fragment fade-in" data-fragment-index="1" -->
 
@@ -15,7 +15,7 @@ public IActionResult Question(int id)
 
 <!--.element: class="fragment fade-in" data-fragment-index="1" -->
 
-#### Do this
+##### Do this
 
 <!--.element: class="fragment fade-in" data-fragment-index="2" -->
 
@@ -29,3 +29,7 @@ public async Task<IActionResult> Question(int id)
 ```
 
 <!--.element: class="fragment fade-in" data-fragment-index="2" -->
+
+[good article to read](https://itnext.io/visual-guide-to-csharp-async-await-bc85db77f36a)
+
+<!--.element: class="fragment fade-in" data-fragment-index="3" -->
