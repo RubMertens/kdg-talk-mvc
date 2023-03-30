@@ -6,7 +6,7 @@
   "author": "Ruben Mertens <rubmertens@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@infosupport/kc-cli": "^4.1.1"
+    "@infosupport/kc-cli": "^4.14.1"
   },
   "scripts": {
     "start": "kc serve"

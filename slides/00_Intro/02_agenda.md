@@ -5,6 +5,8 @@
   - editor templates
   - tagHelpers
   - ViewComponents
-- transactions
-  - unit of work
+- async/await
+  - what is
+  - why should you care
+  - A peak behind the curtains
 - shameless self promotion
