@@ -1,72 +1,48 @@
 using System;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace Voting.WebApp.CustomTagHelpers
+namespace Voting.WebApp.CustomTagHelpers;
+
+[HtmlTargetElement("editor")]
+public class EditorForTagHelper : TagHelper
 {
-    [HtmlTargetElement("editor")]
-    public class EditorForTagHelper: TagHelper
+    private readonly IHtmlHelper htmlHelper;
+
+    [HtmlAttributeName("for")]
+    public ModelExpression ModelExpression { get; set; }
+    public string Template { get; set; }
+
+    [ViewContext]
+    [HtmlAttributeNotBound]
+    public ViewContext ViewContext { get; set; }
+
+    public EditorForTagHelper(IHtmlHelper htmlHelper)
     {
-        private readonly IHtmlHelper htmlHelper;
-
-        public EditorForTagHelper(IHtmlHelper htmlHelper)
-        {
-            this.htmlHelper = htmlHelper;
-        }
-
-        [ViewContext]
-        [HtmlAttributeNotBound]
-        public ViewContext ViewContext { get; set; }
-
-        public override void Process(TagHelperContext context, TagHelperOutput output)
-        {
-            output.TagName = "";
-            ((IViewContextAware) htmlHelper).Contextualize(ViewContext);
-            output.Content.SetHtmlContent(htmlHelper.EditorForModel());
-        }
+        this.htmlHelper = htmlHelper;
     }
 
-    [HtmlTargetElement("editor-for")]
-    public class EditorTagHelper : TagHelper
+    public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
     {
-        private readonly IHtmlHelper htmlHelper;
+        if (context == null)
+            throw new ArgumentNullException(nameof(context));
 
-        public ModelExpression ModelExpression { get; set; }
-        public string Template { get; set; }
+        if (output == null)
+            throw new ArgumentNullException(nameof(output));
 
-        [ViewContext]
-        [HtmlAttributeNotBound]
-        public ViewContext ViewContext { get; set; }
-
-        public EditorTagHelper(IHtmlHelper htmlHelper)
+        if (!output.Attributes.ContainsName(nameof(Template)))
         {
-            this.htmlHelper = htmlHelper;
+            output.Attributes.Add(nameof(Template), Template);
         }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            if (context == null)
-                throw new ArgumentNullException(nameof(context));
+        output.SuppressOutput();
 
-            if (output == null)
-                throw new ArgumentNullException(nameof(output));
+        (htmlHelper as IViewContextAware)?.Contextualize(ViewContext);
 
-            if (!output.Attributes.ContainsName(nameof(Template)))
-            {
-                output.Attributes.Add(nameof(Template), Template);
-            }
+        output.Content.SetHtmlContent(htmlHelper.Editor(ModelExpression.Name, Template));
 
-            output.SuppressOutput();
-
-            (htmlHelper as IViewContextAware)?.Contextualize(ViewContext);
-
-            output.Content.SetHtmlContent(htmlHelper.Editor(ModelExpression.Name, Template));
-
-            await Task.CompletedTask;
-        }
+        await Task.CompletedTask;
     }
 }

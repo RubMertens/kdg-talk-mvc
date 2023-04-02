@@ -12,11 +12,7 @@ namespace Voting.Data.Models
         public PossibleAnswer PossibleAnswer { get; set; }
         public IdentityUser User { get; set; }
         public string UserId { get; set; }
-        
-        public int QuestionnaireId { get; set; }
-        public Questionnaire Questionnaire { get; set; }
-        
+
         public int? CommentId { get; set; }
-        public Comment Comment { get; set; }
     }
 }

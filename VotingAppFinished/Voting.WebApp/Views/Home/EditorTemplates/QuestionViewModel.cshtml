@@ -1,9 +1,12 @@
 @model Voting.WebApp.Controllers.QuestionViewModel
 
 <form asp-action="Vote" asp-route-questionId="@Model.Id" asp-route-questionnaireId="@Model.QuestionnaireId">
-    @* @Html.EditorFor(m => m.PossibleAnswers) *@
-    @* @Html.EditorForModel() *@
-    <editor-for model-expression="PossibleAnswers"/>
-    
-    <input asp-for="Comment"/>
+    <div>
+        <h5>From @@Html.EditorFor</h5>
+        @Html.EditorFor(m => m.Answers)
+    </div>
+    <div>
+        <h5>From EditorForModel</h5>
+        <editor for="Answers"/>
+    </div>
 </form>

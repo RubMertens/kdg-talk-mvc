@@ -7,7 +7,7 @@ namespace Voting.Data.Repositories
 {
     public interface IQuestionRepository
     {
-        Task<Question> ById(int id);
+        Task<Question?> ById(int id);
     }
 
     public class QuestionRepository : IQuestionRepository
@@ -19,7 +19,7 @@ namespace Voting.Data.Repositories
             this.context = context;
         }
 
-        public Task<Question> ById(int id)
+        public Task<Question?> ById(int id)
         {
             return context
                 .Questions

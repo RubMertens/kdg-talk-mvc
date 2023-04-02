@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Voting.WebApp.CustomTagHelpers
 {
-    [HtmlTargetElement("display")]
-    public class DisplayForTagHelper: TagHelper
+    [HtmlTargetElement("display-for-model")]
+    public class DisplayForModelTagHelper: TagHelper
     {
         private readonly IHtmlHelper htmlHelper;
 
-        public DisplayForTagHelper(IHtmlHelper htmlHelper)
+        public DisplayForModelTagHelper(IHtmlHelper htmlHelper)
         {
             this.htmlHelper = htmlHelper;
         }
