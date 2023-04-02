@@ -13,7 +13,6 @@ namespace Voting.Data.Data
         public DbSet<Questionnaire> Questionnaires { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<PossibleAnswer> PossibleAnswers { get; set; }
-        public DbSet<Comment> Comments { get; set; }
 
         public async Task ActualSaveChangesAsync()
         {
@@ -82,28 +81,24 @@ namespace Voting.Data.Data
                     {
                         Id = 1,
                         Answer = "Totally yes",
-                        Color = "green",
                         QuestionId = 1
                     },
                     new PossibleAnswer()
                     {
                         Id = 2,
                         Answer = "Hell no, cereal is just breakfast",
-                        Color = "red",
                         QuestionId = 1
                     },
                     new PossibleAnswer()
                     {
                         Id = 3,
                         Answer = "Over! Under is simply barbaric!",
-                        Color = "yellow",
                         QuestionId = 2
                     },
                     new PossibleAnswer()
                     {
                         Id = 4,
                         Answer = "Under! Over is for spawn of Satan!",
-                        Color = "yellow",
                         QuestionId = 2
                     },
                     new PossibleAnswer()

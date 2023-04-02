@@ -1,10 +1,16 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
+#nullable disable
+
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Voting.Data.Migrations
 {
+    /// <inheritdoc />
     public partial class Init : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -47,26 +53,12 @@ namespace Voting.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Comments",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    UserId = table.Column<string>(type: "TEXT", nullable: true),
-                    CommentValue = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Comments", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Questionnaires",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(type: "TEXT", nullable: true)
+                    Title = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -185,7 +177,7 @@ namespace Voting.Data.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    QuestionValue = table.Column<string>(type: "TEXT", nullable: true),
+                    QuestionValue = table.Column<string>(type: "TEXT", nullable: false),
                     QuestionnaireId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -206,8 +198,7 @@ namespace Voting.Data.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     QuestionId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Answer = table.Column<string>(type: "TEXT", nullable: true),
-                    Color = table.Column<string>(type: "TEXT", nullable: true)
+                    Answer = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -228,7 +219,7 @@ namespace Voting.Data.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     QuestionId = table.Column<int>(type: "INTEGER", nullable: false),
                     PossibleAnswerId = table.Column<int>(type: "INTEGER", nullable: false),
-                    UserId = table.Column<string>(type: "TEXT", nullable: true),
+                    UserId = table.Column<string>(type: "TEXT", nullable: false),
                     CommentId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
@@ -239,13 +230,7 @@ namespace Voting.Data.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Answers_Comments_CommentId",
-                        column: x => x.CommentId,
-                        principalTable: "Comments",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Answers_PossibleAnswers_PossibleAnswerId",
                         column: x => x.PossibleAnswerId,
@@ -263,77 +248,37 @@ namespace Voting.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Questionnaires",
                 columns: new[] { "Id", "Title" },
-                values: new object[] { 1, "Silly Questions" });
-
-            migrationBuilder.InsertData(
-                table: "Questionnaires",
-                columns: new[] { "Id", "Title" },
-                values: new object[] { 2, "Monty Python references" });
-
-            migrationBuilder.InsertData(
-                table: "Questions",
-                columns: new[] { "Id", "QuestionValue", "QuestionnaireId" },
-                values: new object[] { 1, "Is Cereal soup?", 1 });
+                values: new object[,]
+                {
+                    { 1, "Silly Questions" },
+                    { 2, "Monty Python references" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Questions",
                 columns: new[] { "Id", "QuestionValue", "QuestionnaireId" },
-                values: new object[] { 2, "Does toilet paper go over or under the roll?", 1 });
-
-            migrationBuilder.InsertData(
-                table: "Questions",
-                columns: new[] { "Id", "QuestionValue", "QuestionnaireId" },
-                values: new object[] { 3, "What is your favourite colour?", 2 });
-
-            migrationBuilder.InsertData(
-                table: "Questions",
-                columns: new[] { "Id", "QuestionValue", "QuestionnaireId" },
-                values: new object[] { 4, "What should you bring the knights who say Ni!", 2 });
+                values: new object[,]
+                {
+                    { 1, "Is Cereal soup?", 1 },
+                    { 2, "Does toilet paper go over or under the roll?", 1 },
+                    { 3, "What is your favourite colour?", 2 },
+                    { 4, "What should you bring the knights who say Ni!", 2 }
+                });
 
             migrationBuilder.InsertData(
                 table: "PossibleAnswers",
-                columns: new[] { "Id", "Answer", "Color", "QuestionId" },
-                values: new object[] { 1, "Totally yes", "green", 1 });
-
-            migrationBuilder.InsertData(
-                table: "PossibleAnswers",
-                columns: new[] { "Id", "Answer", "Color", "QuestionId" },
-                values: new object[] { 2, "Hell no, cereal is just breakfast", "red", 1 });
-
-            migrationBuilder.InsertData(
-                table: "PossibleAnswers",
-                columns: new[] { "Id", "Answer", "Color", "QuestionId" },
-                values: new object[] { 3, "Over! Under is simply barbaric!", "yellow", 2 });
-
-            migrationBuilder.InsertData(
-                table: "PossibleAnswers",
-                columns: new[] { "Id", "Answer", "Color", "QuestionId" },
-                values: new object[] { 4, "Under! Over is for spawn of Satan!", "yellow", 2 });
-
-            migrationBuilder.InsertData(
-                table: "PossibleAnswers",
-                columns: new[] { "Id", "Answer", "Color", "QuestionId" },
-                values: new object[] { 5, "Blue", null, 3 });
-
-            migrationBuilder.InsertData(
-                table: "PossibleAnswers",
-                columns: new[] { "Id", "Answer", "Color", "QuestionId" },
-                values: new object[] { 6, "Yellow", null, 3 });
-
-            migrationBuilder.InsertData(
-                table: "PossibleAnswers",
-                columns: new[] { "Id", "Answer", "Color", "QuestionId" },
-                values: new object[] { 7, "A shrubbery!", null, 4 });
-
-            migrationBuilder.InsertData(
-                table: "PossibleAnswers",
-                columns: new[] { "Id", "Answer", "Color", "QuestionId" },
-                values: new object[] { 8, "A holy grail?", null, 4 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Answers_CommentId",
-                table: "Answers",
-                column: "CommentId");
+                columns: new[] { "Id", "Answer", "QuestionId" },
+                values: new object[,]
+                {
+                    { 1, "Totally yes", 1 },
+                    { 2, "Hell no, cereal is just breakfast", 1 },
+                    { 3, "Over! Under is simply barbaric!", 2 },
+                    { 4, "Under! Over is for spawn of Satan!", 2 },
+                    { 5, "Blue", 3 },
+                    { 6, "Yellow", 3 },
+                    { 7, "A shrubbery!", 4 },
+                    { 8, "A holy grail?", 4 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Answers_PossibleAnswerId",
@@ -399,6 +344,7 @@ namespace Voting.Data.Migrations
                 column: "QuestionnaireId");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
@@ -418,9 +364,6 @@ namespace Voting.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
-
-            migrationBuilder.DropTable(
-                name: "Comments");
 
             migrationBuilder.DropTable(
                 name: "PossibleAnswers");
