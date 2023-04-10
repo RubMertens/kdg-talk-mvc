@@ -1,0 +1,141 @@
+
+- Async wait
+    You've seen me use it what is about
+
+Strap in; we're going back to grandpa days!
+    - old man.jpg
+
+om goed te verstaan hoe async await werkt moeten we threads begrijpen
+om threads te begrijpen moeten we CPUs begrijpen
+
+CPUs hebben cores
+    cores kunnen maar één ding tegelijk
+onze laptops
+    ondertussen al veel core 8? 16? 
+web servers?
+    MOAR CORES! 32 / 64 niet unheard of.
+
+But why? 
+    Als je lokaal op je laptop bezig bent heb je gemiddeld 1 persoon die tegelijk op u website wilt
+    Als ge google zijt dan honderden duizenden requests elke seconde aan het verwerken.
+        Goed google is nu een schaal apart 
+    Maar web servers halen er veel uit van dingen tegelijk te kunnen doen. 
+
+Nu ge zou kunnen zeggen
+    is goed, I got this 😎
+    Ik ga gewoon per request `new Thread()` doen!
+    Maar threads zijn niet goedkoop!
+    er zijn er "maar" tientallen.
+    u server zou snel vol lopen 
+
+Hoe dan wel?
+    ThreadPool
+    ipv per request een nieuwe thread op te starten hou je x aantal threads bij. 
+    de requests stop je in een soort buffer een wachtrij en je assigned een thread aan een request.
+    op het eind van de request --> thread terug in de pool stoppen!
+
+ok ok das allemaal goed, wa heeft da te zien met async/await ? 
+    wel binnen een request kan er veel gebeuren.
+        - dingen berekenen
+        - dingen ophalen uit de databank
+        - mss een externe api call doen?
+    Alles wat niet "CPU bound is" maar "IO bound" doet eigenlijk de thread wachten. 
+    en blokeerd!!
+    
+Async/await the why?
+    "non-blocking code" 
+        een term voor code die de thread los laat als het wacht op externe dingen.
+    "makkelijk parallelisatie model"
+        ipv een eigen multithreading model te moeten schrijven en onderhoudenS
+        gebruik maken van de bestaande thread pool + tasks
+            geen gedoe met threads
+            geen gedoe met scheduling
+            geen gedoe met starvation
+                nice!
+alright, but how? 
+Simple -> write `async`, return `Task<Result>` and `await` where you call.
+Ok but for real now, how?
+
+
+--> state machines
+```cs
+	[AsyncStateMachine(typeof(<CallsAwaitableFunction>d__1))]
+	[DebuggerStepThrough]
+	public Task CallsAwaitableFunction()
+	{
+		<CallsAwaitableFunction>d__1 stateMachine = new <CallsAwaitableFunction>d__1();
+		stateMachine.<>t__builder = AsyncTaskMethodBuilder.Create();
+		stateMachine.<>4__this = this;
+		stateMachine.<>1__state = -1;
+		stateMachine.<>t__builder.Start(ref stateMachine);
+		return stateMachine.<>t__builder.Task;
+	}
+```
+
+```cs
+	[CompilerGenerated]
+	private sealed class <CallsAwaitableFunction>d__1 : IAsyncStateMachine
+	{
+		public int <>1__state;
+
+		public AsyncTaskMethodBuilder <>t__builder;
+
+		public Testing <>4__this;
+
+		private TaskAwaiter<string> <>u__1;
+
+		private void MoveNext()
+		{
+			int num = <>1__state;
+			try
+			{
+				TaskAwaiter<string> awaiter;
+				if (num != 0)
+				{
+					awaiter = <>4__this.ReturnsStringAsync().GetAwaiter();
+					if (!awaiter.IsCompleted)
+					{
+						num = (<>1__state = 0);
+						<>u__1 = awaiter;
+						<CallsAwaitableFunction>d__1 stateMachine = this;
+						<>t__builder.AwaitUnsafeOnCompleted(ref awaiter, ref stateMachine);
+						return;
+					}
+				}
+				else
+				{
+					awaiter = <>u__1;
+					<>u__1 = default(TaskAwaiter<string>);
+					num = (<>1__state = -1);
+				}
+				awaiter.GetResult();
+			}
+			catch (Exception exception)
+			{
+				<>1__state = -2;
+				<>t__builder.SetException(exception);
+				return;
+			}
+			<>1__state = -2;
+			<>t__builder.SetResult();
+		}
+
+		void IAsyncStateMachine.MoveNext()
+		{
+			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+			this.MoveNext();
+		}
+
+		[DebuggerHidden]
+		private void SetStateMachine([System.Runtime.CompilerServices.Nullable(1)] IAsyncStateMachine stateMachine)
+		{
+		}
+
+		void IAsyncStateMachine.SetStateMachine([System.Runtime.CompilerServices.Nullable(1)] IAsyncStateMachine stateMachine)
+		{
+			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
+			this.SetStateMachine(stateMachine);
+		}
+	}
+```
+
