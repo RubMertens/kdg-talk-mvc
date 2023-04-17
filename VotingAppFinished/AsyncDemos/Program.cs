@@ -9,6 +9,15 @@ var slowlyReverseStringInDatabase = (string input) =>
     return input.Reverse();
 };
 
+var request = new object();
+
+var HandleRequest = (object r) =>
+{
+
+};
+
+ThreadPool.QueueUserWorkItem(_ => HandleRequest(request));
+
 var t = new Thread(() =>
 {
     for (int i = 0; i < 1000; i++)

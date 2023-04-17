@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -56,7 +57,9 @@ public class HomeController : Controller
     [HttpGet("question/{id:int}")]
     public async Task<IActionResult> Question(int id)
     {
+        //part one
         var question = await _questionRepository.ById(id);
+        //part two
         var userId = _userManager.GetUserId(User);
 
         if (question == null)
@@ -65,6 +68,7 @@ public class HomeController : Controller
         }
 
         var answer = await _answerRepository.ByQuestionAndUserId(id, userId);
+        //part three
         var nextQuestionId = await _questionnaireRepository.NextQuestionId(id);
 
         var vm = new QuestionViewModel(

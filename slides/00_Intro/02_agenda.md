@@ -6,7 +6,7 @@
   - tagHelpers
   - ViewComponents
 - async/await
-  - what is
+  - what is it?
   - why should you care
-  - A peak behind the curtains
+  - how to use it
 - shameless self promotion
