@@ -11,9 +11,9 @@ namespace Voting.Data.Repositories
 {
     public interface IQuestionnaireRepository
     {
-        Task<ICollection< Questionnaire>> All();
+        Task<ICollection<Questionnaire>> All();
         Task<int?> NextQuestionId(int currentQuestionId);
-        Task<Questionnaire> ById(int id);
+        Task<Questionnaire?> ById(int id);
     }
 
     public class QuestionnaireRepository : IQuestionnaireRepository
@@ -25,7 +25,7 @@ namespace Voting.Data.Repositories
             this.context = context;
         }
             
-        public async Task<Questionnaire> ById(int id)
+        public async Task<Questionnaire?> ById(int id)
         {
             return await context.Questionnaires.Include(q => q.Questions).FirstOrDefaultAsync(q => q.Id == id);
         }
@@ -44,8 +44,6 @@ namespace Voting.Data.Repositories
             return (await context.Questions.FirstOrDefaultAsync(q =>
                 q.QuestionnaireId == question.QuestionnaireId && q.Id > question.Id))
                 ?.Id;
-            // return (await context.Questions
-            //     .FirstOrDefaultAsync(q => q.QuestionnaireId == questionnaireId && q.Id > currentQuestionId))?.Id;
         }
         
     }

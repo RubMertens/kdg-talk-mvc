@@ -5,45 +5,37 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Voting.Data.Data;
 
-namespace Voting.WebApp.ViewComponents
+namespace Voting.WebApp.ViewComponents;
+
+public class ProgressViewComponent : ViewComponent
 {
-    public class ProgressViewComponent: ViewComponent
+    private readonly ApplicationDbContext _context;
+    private readonly UserManager<IdentityUser> _userManager;
+
+    public ProgressViewComponent(ApplicationDbContext context, UserManager<IdentityUser> userManager)
     {
-        private readonly ApplicationDbContext context;
-        private readonly UserManager<IdentityUser> userManager;
-
-        public ProgressViewComponent(ApplicationDbContext context, UserManager<IdentityUser> userManager)
-        {
-            this.context = context;
-            this.userManager = userManager;
-        }
-
-        public async Task<IViewComponentResult> InvokeAsync(int questionnaireId)
-        {
-            var userId = userManager.GetUserId(UserClaimsPrincipal);
-
-            var answers = await context.Answers
-                .Where(a => a.QuestionnaireId == questionnaireId
-                            && a.UserId == userId
-                ).CountAsync();
-
-            var totalQuestions = await context.Questions
-                .Where(q => q.QuestionnaireId == questionnaireId)
-                .CountAsync();
-
-            var vm = new ProgressViewModel
-            {
-                Id = questionnaireId,
-                PercentComplete = (int) ((decimal) answers / totalQuestions *100)
-            };
-            
-            return View(vm);
-        }
+        this._context = context;
+        this._userManager = userManager;
     }
 
-    public class ProgressViewModel
+    public async Task<IViewComponentResult> InvokeAsync(int questionnaireId)
     {
-        public int Id { get; set; }
-        public int PercentComplete { get; set; }
+        var userId = _userManager.GetUserId(UserClaimsPrincipal);
+
+        var answers = await _context.Answers
+            .Where(a => a.Question.QuestionnaireId == questionnaireId
+                        && a.UserId == userId
+            ).CountAsync();
+
+        var totalQuestions = await _context.Questions
+            .Where(q => q.QuestionnaireId == questionnaireId)
+            .CountAsync();
+
+        var percent = (int)((decimal)answers / totalQuestions * 100);
+        var vm = new ProgressViewModel(questionnaireId, percent);
+
+        return View(vm);
     }
 }
+
+public record ProgressViewModel(int Id, int PercentComplete);

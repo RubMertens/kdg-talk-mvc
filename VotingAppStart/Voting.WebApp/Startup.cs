@@ -37,7 +37,6 @@ namespace Voting.WebApp
                 .AddRazorRuntimeCompilation();
 
             services.AddScoped<IAnswerRepository, AnswerRepository>();
-            services.AddScoped<ICommentRepository, CommentRepository>();
             services.AddScoped<IQuestionnaireRepository, QuestionnaireRepository>();
             services.AddScoped<IQuestionRepository, QuestionRepository>();
         }

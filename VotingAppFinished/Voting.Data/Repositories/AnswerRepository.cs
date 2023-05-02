@@ -8,7 +8,7 @@ namespace Voting.Data.Repositories
 {
     public interface IAnswerRepository
     {
-        Task<Answer> ByQuestionAndUserId(int questionId, string userId);
+        Task<Answer?> ByQuestionAndUserId(int questionId, string userId);
         Task<Answer> Add(Answer answer);
     }
 
@@ -21,10 +21,9 @@ namespace Voting.Data.Repositories
             this.context = context;
         }
 
-        public Task<Answer> ByQuestionAndUserId(int questionId, string userId)
+        public Task<Answer?> ByQuestionAndUserId(int questionId, string userId)
         {
             return context.Answers
-                .Include(a => a.Comment)
                 .FirstOrDefaultAsync(a => a.QuestionId == questionId && a.UserId == userId);
         }
 

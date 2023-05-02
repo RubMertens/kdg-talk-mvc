@@ -9,12 +9,24 @@
 <vc:progress questionnaire-id="@Model.QuestionnaireId"/>
 @if (Model.IsAnswered)
 {
-    @* @Html.DisplayForModel() *@
-    <display/>
-    <a asp-action="Question" asp-route-id="@(Model.NextQuestionId ?? -1)">Go to next question</a>
+    <div>
+        <h4>From @@Html.DisplayForModel</h4>
+        @Html.DisplayForModel()
+    </div>
+    <div>
+        <h4>From diplayTagHelper</h4>
+        <display-for-model/>
+    </div>
+    <a asp-action="Question" asp-route-id="@(Model.NextQuestionId)">Go to next question</a>
 }
 else
 {
-    @*@Html.EditorForModel()*@
-    <editor/>
+    <div>
+        <h4>From @@Html.EditorForModel</h4>
+        @Html.EditorForModel()
+    </div>
+    <div>
+        <h4>From editorTagHelper</h4>
+        <editor-for-model/>
+    </div>
 }
